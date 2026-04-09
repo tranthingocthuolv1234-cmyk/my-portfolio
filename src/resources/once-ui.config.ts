@@ -11,7 +11,7 @@ import {
   SocialSharingConfig,
   StyleConfig,
 } from "@/types";
-import { Be_Vietnam_Pro, IBM_Plex_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { home } from "./index";
 
 const baseURL: string = "https://ngocthu-space.vercel.app";
@@ -34,25 +34,25 @@ const display: DisplayConfig = {
 // Set password in the .env file, refer to .env.example
 const protectedRoutes: ProtectedRoutesConfig = {};
 
-const heading = Be_Vietnam_Pro({
+const heading = Geist({
   variable: "--font-heading",
-  subsets: ["latin", "vietnamese"],
+  subsets: ["latin"],
   display: "swap",
 });
 
-const body = Be_Vietnam_Pro({
+const body = Geist({
   variable: "--font-body",
-  subsets: ["latin", "vietnamese"],
+  subsets: ["latin"],
   display: "swap",
 });
 
-const label = Be_Vietnam_Pro({
+const label = Geist({
   variable: "--font-label",
-  subsets: ["latin", "vietnamese"],
+  subsets: ["latin"],
   display: "swap",
 });
 
-const code = IBM_Plex_Mono({
+const code = Geist_Mono({
   variable: "--font-code",
   subsets: ["latin"],
   display: "swap",
