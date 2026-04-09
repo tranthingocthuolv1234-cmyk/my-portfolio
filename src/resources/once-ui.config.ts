@@ -36,19 +36,19 @@ const protectedRoutes: ProtectedRoutesConfig = {};
 
 const heading = Be_Vietnam_Pro({
   variable: "--font-heading",
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin", "vietnamese"],
   display: "swap",
 });
 
 const body = Be_Vietnam_Pro({
   variable: "--font-body",
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin", "vietnamese"],
   display: "swap",
 });
 
 const label = Be_Vietnam_Pro({
   variable: "--font-label",
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin", "vietnamese"],
   display: "swap",
 });
 
