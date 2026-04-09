@@ -1,60 +1,96 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Video Style Portfolio</title>
+    <title>Janis Thu | Technical BA Intern</title>
     <meta
       name="description"
-      content="Portfolio presentation style inspired by the reference video, built with plain HTML, CSS and JavaScript."
+      content="Technical BA intern portfolio for Janis Thu with hero and education timeline."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="cloud-layer cloud-layer-a"></div>
-    <div class="cloud-layer cloud-layer-b"></div>
+    <div class="space-bg" aria-hidden="true">
+      <div class="nebula"></div>
+      <div class="planet planet-lg"></div>
+      <div class="planet planet-sm"></div>
+      <div class="orbit orbit-a"></div>
+      <div class="orbit orbit-b"></div>
+      <div class="stars"></div>
+    </div>
 
-    <main class="presentation-shell">
-      <div class="presentation-frame">
-        <header class="topbar">
-          <div class="brand">
-            <span class="brand-mark"></span>
-            <span class="brand-text">Thu Tran Portfolio</span>
+    <nav class="floating-nav" aria-label="Primary navigation">
+      <a class="nav-item nav-icon" href="#gateway" data-nav-target="gateway" aria-label="Back to top">?</a>
+      <a class="nav-item" href="#gateway" data-nav-target="gateway">gateway</a>
+      <a class="nav-item" href="#janis-md" data-nav-target="janis-md">janis.md</a>
+      <a class="nav-item" href="/work/parkflow-b-smart-parking-platform">Logic Lab</a>
+      <a class="nav-item" href="/gallery">Satellite View</a>
+      <a class="nav-item" href="mailto:hello@ngocthu.space">Contact</a>
+    </nav>
+
+    <main class="page-shell">
+      <section class="hero-section reveal" id="gateway">
+        <div class="hero-glass">
+          <div class="hero-copy">
+            <p class="eyebrow">Gateway</p>
+            <h1>JANIS THU</h1>
+            <h2>TECHNICAL BA INTERN</h2>
+            <p class="bio">
+              Passionate about digital transformation and optimizing workflows (e.g., ParkFlow B
+              30s to 5s). Unique expertise in monitoring agriculture using Sentinel-1 satellite
+              radar data.
+            </p>
+            <div class="social-row">
+              <a href="https://github.com/tranthingocthuol1234-cmyk" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a href="mailto:hello@ngocthu.space">Email</a>
+            </div>
           </div>
 
-          <div class="topbar-actions">
-            <button class="nav-button" id="prevButton" type="button" aria-label="Slide trước">
-              Prev
-            </button>
-            <button class="nav-button nav-button-primary" id="nextButton" type="button" aria-label="Slide tiếp theo">
-              Next
-            </button>
-          </div>
-        </header>
+          <figure class="hero-photo">
+            <img src="/images/avatar.jpg" alt="Janis Thu profile photo" />
+          </figure>
+        </div>
+      </section>
 
-        <section class="slides-stage">
-          <div class="slides-track" id="slidesTrack"></div>
-        </section>
+      <section class="education-section reveal" id="janis-md">
+        <div class="section-head">
+          <p class="eyebrow">janis.md</p>
+          <h2>EDUCATION</h2>
+        </div>
 
-        <footer class="deck-footer">
-          <div class="section-meta">
-            <span class="section-index" id="sectionIndex">01</span>
-            <span class="section-name" id="sectionName">Intro</span>
-          </div>
-          <div class="dot-nav" id="dotNav"></div>
-        </footer>
-      </div>
+        <div class="timeline">
+          <article class="edu-card">
+            <span class="edu-year">2022-2026</span>
+            <h3>UEH University</h3>
+            <p>Bachelor of Information Technology, Minor in Business Administration</p>
+            <ul>
+              <li>TechX Research Member focusing on practical analytics for business problems.</li>
+              <li>GPA target: 3.6/4.0 with emphasis on systems thinking and BA practices.</li>
+              <li>Core focus: Requirements analysis, BPMN modeling, SQL insights, case analysis.</li>
+            </ul>
+          </article>
+
+          <article class="edu-card">
+            <span class="edu-year">2025-2026</span>
+            <h3>Applied BA Track</h3>
+            <p>Self-directed internship preparation aligned to Technical BA responsibilities.</p>
+            <ul>
+              <li>Built ParkFlow B flow optimization from process map to measurable KPI outcomes.</li>
+              <li>Practiced user stories and acceptance criteria for product-ready documentation.</li>
+              <li>Strengthened communication in English through concise BA keyword writing.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
     </main>
-
-    <aside class="edit-note">
-      <p>Sửa nội dung nhanh trong file <strong>script.js</strong></p>
-    </aside>
 
     <script src="./script.js"></script>
   </body>
