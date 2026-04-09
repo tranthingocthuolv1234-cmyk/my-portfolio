@@ -1,0 +1,236 @@
+@use "../components/breakpoints.scss" as breakpoints;
+
+.page {
+  width: min(100%, 72rem);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid var(--portfolio-border);
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at top left, var(--portfolio-glow), transparent 32rem),
+    radial-gradient(circle at right 20%, var(--portfolio-accent-glow), transparent 28rem),
+    linear-gradient(135deg, rgba(255, 252, 247, 0.92), rgba(248, 244, 237, 0.76));
+  box-shadow: var(--portfolio-shadow);
+}
+
+.heroGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.95fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.eyebrow {
+  display: inline-flex;
+  margin-bottom: 1.25rem;
+}
+
+.headline {
+  max-width: 12ch;
+  letter-spacing: -0.04em;
+}
+
+.subline {
+  max-width: 42rem;
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.metricGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.metricCard,
+.profileCard,
+.focusCard,
+.journeyCard,
+.contactCard {
+  border: 1px solid var(--portfolio-border);
+  background: var(--portfolio-shell);
+  box-shadow: var(--portfolio-shadow);
+  backdrop-filter: blur(20px);
+}
+
+.metricCard {
+  padding: 1rem;
+  border-radius: 1.25rem;
+}
+
+.metricValue {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.profileCard {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  padding: 1.5rem;
+  border-radius: 1.75rem;
+  min-height: 100%;
+}
+
+.profileTop {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pillRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid rgba(16, 43, 48, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  color: rgba(23, 31, 33, 0.86);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sectionKicker {
+  display: inline-flex;
+  margin-bottom: 0.75rem;
+  color: var(--brand-on-background-medium);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.focusGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.focusCard {
+  padding: 1.4rem;
+  border-radius: 1.5rem;
+}
+
+.focusIndex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 999px;
+  background: rgba(28, 125, 132, 0.12);
+  color: rgba(15, 71, 75, 0.88);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.journeyGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.journeyCard {
+  padding: 1.4rem;
+  border-radius: 1.5rem;
+}
+
+.journeyMeta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.journeyList {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: rgba(28, 34, 37, 0.72);
+}
+
+.journeyList li + li {
+  margin-top: 0.6rem;
+}
+
+.contactCard {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: 2rem;
+}
+
+.contactCard::after {
+  content: "";
+  position: absolute;
+  inset: auto -4rem -4rem auto;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 153, 102, 0.3), transparent 70%);
+  pointer-events: none;
+}
+
+.contactActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: breakpoints.$m) {
+  .heroGrid,
+  .focusGrid,
+  .journeyGrid,
+  .metricGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .headline {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: breakpoints.$s) {
+  .hero,
+  .contactCard {
+    border-radius: 1.5rem;
+  }
+
+  .profileTop,
+  .sectionHeader,
+  .journeyMeta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -2,48 +2,27 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Thu",
+  lastName: "Tran",
+  name: "Thu Tran",
+  role: "Frontend Developer & UI Designer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "hello@ngocthu.space",
+  location: "Asia/Ho_Chi_Minh",
+  languages: ["Tiếng Việt", "English"],
 };
 
 const newsletter: Newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  display: false,
+  title: <>Nhận cập nhật từ {person.firstName}</>,
+  description: <>Chia sẻ ngắn về giao diện web, thiết kế sản phẩm và quá trình học tập.</>,
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
-    essential: true,
-  },
-  {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://github.com/tranthingocthuol1234-cmyk",
     essential: true,
   },
   {
@@ -57,35 +36,37 @@ const social: Social = [
 const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
-  label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  label: "Trang chủ",
+  title: `${person.name} | Portfolio`,
+  description: `Portfolio cá nhân của ${person.name}, tập trung vào thiết kế giao diện và phát triển web bằng Next.js.`,
+  headline: <>Thiết kế giao diện rõ ràng, xây trải nghiệm web mượt và dễ dùng</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong>ParkFlow B</strong>
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Dự án nổi bật
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work/parkflow-b-smart-parking-platform",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      Mình tập trung vào landing page, dashboard và website cá nhân bằng React / Next.js.
+      <br />
+      Ưu tiên giao diện sạch, responsive và dễ mở rộng khi deploy thực tế.
+    </>
   ),
 };
 
 const about: About = {
   path: "/about",
-  label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  label: "Giới thiệu",
+  title: `Giới thiệu | ${person.name}`,
+  description: `Thông tin về ${person.name}, ${person.role}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -94,60 +75,59 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
-    link: "https://cal.com",
+    display: false,
+    link: "",
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Tổng quan",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Mình xây dựng giao diện web theo hướng tối giản, hiện đại và ưu tiên khả năng sử dụng
+        thực tế. Điểm mình tập trung nhất là chuyển ý tưởng thành giao diện có cấu trúc tốt, chạy
+        ổn trên desktop lẫn mobile và dễ mở rộng sau này.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
+    display: true,
+    title: "Kinh nghiệm",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Freelance & Personal Projects",
+        timeframe: "2024 - nay",
+        role: "Frontend Developer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Thiết kế và phát triển các trang portfolio, landing page và trang giới thiệu sản phẩm
+            bằng React / Next.js với bố cục rõ ràng và responsive.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Triển khai dự án lên Vercel, tối ưu lại nội dung hiển thị và cấu trúc component để dễ
+            chỉnh sửa khi cần cập nhật.
           </>,
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            alt: "Portfolio homepage preview",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Coursework & Team Projects",
+        timeframe: "2022 - 2024",
+        role: "UI/UX and Frontend",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Tham gia các đồ án nhóm, phụ trách thiết kế giao diện, wireframe và code các màn hình
+            chính cho website quản lý và sản phẩm học tập.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Rèn luyện cách chia component, làm việc với GitHub và phối hợp giữa phần nội dung,
+            giao diện và triển khai.
           </>,
         ],
         images: [],
@@ -155,54 +135,27 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Học tập",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Information Technology",
+        description: <>Nền tảng về lập trình web, cấu trúc dữ liệu và quy trình phát triển sản phẩm số.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Self-learning",
+        description: <>Tự học thêm về UI/UX, thiết kế hệ thống giao diện, GitHub và quy trình deploy dự án.</>,
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Kỹ năng chính",
     skills: [
       {
-        title: "Figma",
+        title: "Next.js & React",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
-        ),
-        tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Xây dựng giao diện component-based, responsive layout, routing và tối ưu trải nghiệm người dùng.</>
         ),
         tags: [
           {
@@ -213,20 +166,56 @@ const about: About = {
             name: "Next.js",
             icon: "nextjs",
           },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
         ],
-        // optional: leave the array empty if you don't want to display images
         images: [
           {
             src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
+            alt: "Next.js interface",
             width: 16,
             height: 9,
           },
         ],
+      },
+      {
+        title: "UI Design & Prototype",
+        description: (
+          <>Lên bố cục, wireframe và prototype trước khi code để luồng sử dụng rõ ràng ngay từ đầu.</>
+        ),
+        tags: [
+          {
+            name: "Figma",
+            icon: "figma",
+          },
+        ],
+        images: [
+          {
+            src: "/images/projects/project-01/cover-02.jpg",
+            alt: "UI design preview",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/project-01/cover-03.jpg",
+            alt: "Prototype preview",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "Deployment & Collaboration",
+        description: (
+          <>Làm việc với GitHub, quản lý phiên bản và deploy trên Vercel để dự án có thể chia sẻ và cập nhật nhanh.</>
+        ),
+        tags: [
+          {
+            name: "GitHub",
+          },
+          {
+            name: "Vercel",
+          },
+        ],
+        images: [],
       },
     ],
   },
@@ -235,67 +224,61 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  title: `Bài viết | ${person.name}`,
+  description: `Góc chia sẻ về giao diện, code và quá trình học tập của ${person.name}`,
 };
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  label: "Dự án",
+  title: `Dự án tiêu biểu | ${person.name}`,
+  description: `Các dự án giao diện và phát triển web của ${person.name}`,
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
+  title: `Gallery | ${person.name}`,
+  description: `Bộ sưu tập hình ảnh của ${person.name}`,
   images: [
     {
       src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
+      alt: "gallery image",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
+      alt: "gallery image",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
+      alt: "gallery image",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
+      alt: "gallery image",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
+      alt: "gallery image",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
+      alt: "gallery image",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
+      alt: "gallery image",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
+      alt: "gallery image",
       orientation: "vertical",
     },
   ],

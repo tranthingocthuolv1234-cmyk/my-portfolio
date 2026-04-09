@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Style Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio presentation style inspired by the reference video, built with plain HTML, CSS and JavaScript."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="cloud-layer cloud-layer-a"></div>
+    <div class="cloud-layer cloud-layer-b"></div>
+
+    <main class="presentation-shell">
+      <div class="presentation-frame">
+        <header class="topbar">
+          <div class="brand">
+            <span class="brand-mark"></span>
+            <span class="brand-text">Thu Tran Portfolio</span>
+          </div>
+
+          <div class="topbar-actions">
+            <button class="nav-button" id="prevButton" type="button" aria-label="Slide trước">
+              Prev
+            </button>
+            <button class="nav-button nav-button-primary" id="nextButton" type="button" aria-label="Slide tiếp theo">
+              Next
+            </button>
+          </div>
+        </header>
+
+        <section class="slides-stage">
+          <div class="slides-track" id="slidesTrack"></div>
+        </section>
+
+        <footer class="deck-footer">
+          <div class="section-meta">
+            <span class="section-index" id="sectionIndex">01</span>
+            <span class="section-name" id="sectionName">Intro</span>
+          </div>
+          <div class="dot-nav" id="dotNav"></div>
+        </footer>
+      </div>
+    </main>
+
+    <aside class="edit-note">
+      <p>Sửa nội dung nhanh trong file <strong>script.js</strong></p>
+    </aside>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
