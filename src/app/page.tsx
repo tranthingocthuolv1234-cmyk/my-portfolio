@@ -65,7 +65,6 @@ export default function Home() {
         </section>
 
         <section className={styles.effectSection} aria-label="Decorative visual effect">
-          <p>Cho nay de hieu ung di</p>
           <div className={styles.effectWave} />
           <div className={styles.effectOrb} />
           <div className={styles.effectWave} />
