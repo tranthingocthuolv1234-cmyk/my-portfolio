@@ -40,11 +40,11 @@ export default function Home() {
       {/* Hero Overlap Section */}
       <section className={styles.heroSection}>
         <div className={styles.overlapTitle}>
-          <div className={styles.titleText}>BUSINESS</div>
+          <div className={`${styles.titleText} ${styles.titleTextLeft}`}>BUSINESS</div>
           <div className={styles.avatarWrapper}>
             <img src="/images/avt.png" alt="Janis Thu Avatar" className={styles.avatar} />
           </div>
-          <div className={styles.titleText}>ANALYST</div>
+          <div className={`${styles.titleText} ${styles.titleTextRight}`}>ANALYST</div>
         </div>
         
         <div className={styles.heroContent}>
@@ -62,9 +62,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Effect placeholder space */}
-      <div className={styles.effectSpace}>
-        Chỗ này để hiệu ứng đi
+      {/* Futuristic Cosmic Effect */}
+      <div className={styles.cosmicDivider}>
+         <div className={styles.orb}></div>
       </div>
 
       {/* My Work Section */}
@@ -79,8 +79,9 @@ export default function Home() {
         </div>
       </section>
 
-      <div className={styles.effectSpace}>
-        Chỗ này để hiệu ứng đi
+      {/* Futuristic Cosmic Effect */}
+      <div className={styles.cosmicDivider}>
+         <div className={styles.orb}></div>
       </div>
 
       {/* Timeline Section */}

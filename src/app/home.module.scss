@@ -2,7 +2,7 @@
 
 .container {
   min-height: 100vh;
-  background-color: #1a1b26; /* Dark navy background matching the screenshots */
+  background-color: #151722; /* Darker navy, solid background to match the screenshots */
   color: #ffffff;
   font-family: 'Inter', sans-serif;
   display: flex;
@@ -10,6 +10,19 @@
   align-items: center;
   padding-bottom: 5rem;
   overflow-x: hidden;
+  position: relative;
+  
+  /* subtle global stars effect */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(1px 1px at 40px 60px, #fff, transparent), radial-gradient(1px 1px at 150px 200px, rgba(255,255,255,0.8), transparent), radial-gradient(2px 2px at 300px 80px, #fff, transparent);
+    background-size: 500px 500px;
+    opacity: 0.15;
+    z-index: 0;
+  }
 }
 
 /* TOP HEADER */
@@ -20,6 +33,7 @@
   font-weight: 600;
   letter-spacing: 2px;
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.4);
+  z-index: 10;
 }
 
 .topNav {
@@ -27,6 +41,7 @@
   gap: 4rem;
   margin-top: 3rem;
   margin-bottom: 5rem;
+  z-index: 10;
 
   .navItem {
     display: flex;
@@ -56,7 +71,7 @@
         width: 30px;
         height: 30px;
         object-fit: contain;
-        filter: brightness(0) invert(1); /* makes dark icons white */
+        filter: brightness(0) invert(1);
         opacity: 0.8;
       }
     }
@@ -81,52 +96,70 @@
   align-items: center;
   position: relative;
   margin-bottom: 4rem;
+  z-index: 10;
 }
 
 .overlapTitle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
   position: relative;
-  height: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 280px; /* Fixed height to anchor the absolute positions */
   
   .titleText {
     font-family: 'DM Serif Display', serif;
-    font-size: 8rem;
+    font-size: clamp(4rem, 9vw, 9rem);
     font-weight: 400;
     color: #ffffff;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 50px rgba(255, 255, 255, 0.5);
     letter-spacing: -2px;
     z-index: 1;
     white-space: nowrap;
     line-height: 1;
+    flex: 1;
+  }
+  
+  .titleTextLeft {
+    text-align: right;
+    padding-right: 140px; /* Creates the gap for the head */
+  }
+
+  .titleTextRight {
+    text-align: left;
+    padding-left: 140px; /* Creates the gap for the head */
   }
 
   .avatarWrapper {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: -50px;
+    /* Move up so the top of head breaks the text, arms drop below */
+    bottom: -150px; 
     z-index: 2;
-    /* Dropshadow to make her pop over text */
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 15px 40px rgba(0,0,0,0.7));
+    pointer-events: none;
     
     .avatar {
-      height: 380px;
+      height: 480px;
       object-fit: contain;
-      /* subtle fade at bottom if needed, but per image it's just cropped */
     }
   }
 }
 
 @media (max-width: 1024px) {
   .overlapTitle {
-    flex-direction: column;
-    height: auto;
-    
-    .titleText { font-size: 5rem; }
-    .avatarWrapper { position: relative; top: 0; }
+    .titleTextLeft { padding-right: 80px; }
+    .titleTextRight { padding-left: 80px; }
+    .avatarWrapper .avatar { height: 380px; }
+  }
+}
+@media (max-width: 600px) {
+  .overlapTitle {
+    .titleTextLeft { padding-right: 40px; }
+    .titleTextRight { padding-left: 40px; }
+    .avatarWrapper .avatar { height: 280px; }
+    .avatarWrapper { bottom: -80px; }
   }
 }
 
@@ -135,7 +168,7 @@
   justify-content: space-between;
   width: 100%;
   padding: 0 2rem;
-  margin-top: 3rem;
+  margin-top: 5rem; /* Space dropped avatar arms */
   z-index: 1;
   gap: 2rem;
 
@@ -146,14 +179,8 @@
     color: #cbd5e1;
   }
 
-  .textLeft {
-    max-width: 450px;
-  }
-
-  .textRight {
-    max-width: 450px;
-    text-align: left;
-  }
+  .textLeft { max-width: 450px; }
+  .textRight { max-width: 450px; text-align: left; }
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -162,13 +189,42 @@
   }
 }
 
-/* PLACEHOLDER EFFECT */
-.effectSpace {
-  font-size: 1.25rem;
-  color: #e2e8f0;
-  margin: 5rem 0;
-  text-align: center;
-  font-weight: 500;
+/* FUTURISTIC EFFECTS */
+.cosmicDivider {
+  width: 100%;
+  height: 180px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  z-index: 1;
+  
+  /* Glowing line */
+  &::before {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.8), rgba(56, 189, 248, 0.8), transparent);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.8), 0 0 30px rgba(56, 189, 248, 0.5);
+  }
+  
+  /* Floating orb */
+  .orb {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #fff, #a855f7, #3b82f6);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.8), 0 0 40px rgba(56, 189, 248, 0.6);
+    animation: cosmicFloat 4s ease-in-out infinite;
+    z-index: 2;
+  }
+}
+
+@keyframes cosmicFloat {
+  0%, 100% { transform: translateY(-10px) scale(1); }
+  50% { transform: translateY(10px) scale(1.1); }
 }
 
 /* MY WORK */
@@ -177,11 +233,12 @@
   max-width: 1200px;
   padding: 0 2rem;
   margin-bottom: 4rem;
+  z-index: 10;
 
   h2 {
     font-family: 'Inter', sans-serif;
     font-size: 1.8rem;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
     margin-bottom: 3rem;
     letter-spacing: 1px;
@@ -194,33 +251,41 @@
   align-items: center;
   gap: 1.5rem;
   
+  .workCard, .workCardTall {
+    background-color: #4b515d;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1b26;
+    font-weight: 500;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    position: relative;
+    border: 2px solid transparent;
+
+    &:hover {
+      transform: translateY(-25px); /* effect nhảy lên */
+      border: 2px solid #a855f7; /* viền tím như trong hình */
+      box-shadow: 0 20px 40px rgba(168, 85, 247, 0.3);
+      color: #fff;
+    }
+  }
+
   .workCard {
     width: 200px;
     height: 300px;
-    background-color: #4b515d;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #1a1b26;
-    font-weight: 500;
   }
 
-  /* One block is slightly taller in user image */
   .workCardTall {
     width: 200px;
-    height: 340px;
-    background-color: #4b515d;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #1a1b26;
-    font-weight: 500;
+    height: 360px;
   }
 
   @media (max-width: 1024px) {
     flex-wrap: wrap;
+    .workCardTall { height: 300px; }
   }
 }
 
@@ -229,17 +294,18 @@
   width: 100%;
   max-width: 900px;
   position: relative;
-  padding-left: 2rem; /* space for the line */
+  padding-left: 2rem; 
   margin-bottom: 5rem;
+  z-index: 10;
 }
 
 .timelineLine {
   position: absolute;
-  left: 40px;
-  top: 0;
+  left: 39px;
+  top: 30px;
   bottom: 0;
-  width: 2px;
-  background: rgba(255, 255, 255, 0.2);
+  width: 1px;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .timelineNode {
@@ -250,20 +316,21 @@
 
   .nodeDot {
     position: absolute;
-    left: -2px; /* aligns with the timelineLine which is at 40px */
+    left: -6px; 
     top: 30px;
     width: 16px;
     height: 16px;
     border-radius: 50%;
     background-color: #718096;
-    border: 3px solid #1a1b26; /* matches background to look 'cut out' */
+    border: 3px solid #1a1b26; 
+    z-index: 2;
   }
 
   .nodeContent {
-    margin-left: 40px; /* buffer from the dot */
+    margin-left: 40px; 
     flex: 1;
     display: flex;
-    padding: 2rem;
+    padding: 2.5rem;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
@@ -272,12 +339,13 @@
     @media (max-width: 768px) {
       flex-direction: column;
       gap: 1.5rem;
+      padding: 1.5rem;
     }
 
     .nodeLabel {
-      width: 200px;
+      width: 220px;
       font-size: 1.25rem;
-      font-weight: 500;
+      font-weight: 400;
       color: #e2e8f0;
     }
 
@@ -290,18 +358,19 @@
       .grid2 {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1rem 2rem;
+        gap: 1.5rem 2rem;
       }
       
       .grid1 {
         display: flex;
         flex-direction: column;
-        gap: 0.75rem;
+        gap: 1.25rem;
 
         a {
           text-decoration: underline;
           color: #fff;
           cursor: pointer;
+          &:hover { color: #a855f7; }
         }
       }
 
@@ -313,16 +382,17 @@
     .toolsIcons {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 3rem;
       flex: 1;
+      flex-wrap: wrap;
       
       img {
-        height: 48px;
+        height: 50px;
         object-fit: contain;
       }
 
-      .medIcon { height: 54px; }
-      .wideIcon { height: 28px; }
+      .medIcon { height: 60px; }
+      .wideIcon { height: 35px; }
     }
   }
 }
@@ -331,6 +401,7 @@
 .contactSection {
   text-align: center;
   margin-bottom: 4rem;
+  z-index: 10;
 
   h2 {
     font-size: 1.25rem;
@@ -344,20 +415,20 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
     background-color: #4b515d;
-    padding: 1rem 3rem;
+    padding: 1rem 3.5rem;
     border-radius: 999px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 
     a {
       transition: transform 0.2s;
       display: flex;
-      &:hover { transform: scale(1.1); }
+      &:hover { transform: scale(1.15); }
       
       img {
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
         object-fit: contain;
       }
     }
