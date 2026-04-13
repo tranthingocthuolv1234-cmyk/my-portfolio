@@ -1,7 +1,11 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap");
 
 :global(*) {
   box-sizing: border-box;
+}
+
+:global(html) {
+  scroll-behavior: smooth;
 }
 
 :global(html),
@@ -37,6 +41,79 @@
   pointer-events: none;
   backdrop-filter: blur(8px);
   background: rgba(3, 8, 20, 0.45);
+}
+
+.header {
+  position: relative;
+  z-index: 2;
+  padding: 2.5rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.title {
+  font-family: "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: 0.15em;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.9), 0 0 24px rgba(255, 255, 255, 0.6);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  justify-content: center;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: #fff;
+    transform: translateY(-3px);
+    
+    .iconWrapper {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  span {
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navIcon {
+  font-size: 1.4rem;
+  color: #fff;
 }
 
 .hero {
