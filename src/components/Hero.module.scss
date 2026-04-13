@@ -21,9 +21,10 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  text-align: right;
+  align-items: flex-start;  /* Align to left like Image 2 */
+  text-align: left;
   padding: 0 0 1.8rem 0;
-  margin-top: -1rem; /* đẩy lên thêm một chút */
+  margin-top: -1rem;
   margin-right: -4rem; /* Overlap image */
   z-index: 2;          /* Ensure text is above image */
 }
@@ -42,13 +43,14 @@
 
 /* ─── Big BUSINESS / ANALYST words ─── */
 .word {
-  margin: 0 0 4rem 0;  /* increased margin bottom so text blocks are lower */
+  margin: 0 0 2rem 0;  /* Reduced margin-bottom to bring text blocks up slightly */
   font-family: "Times New Roman", serif;
   font-style: italic;
-  font-weight: 700;
+  font-weight: 900;
   font-size: clamp(4.5rem, 10vw, 8rem);  /* Enlarge text */
+  -webkit-text-stroke: 3px #fff; /* Make it super thick/bold like Image 2 */
   line-height: 1;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.05em;
   white-space: nowrap;
   color: #fff;
   text-shadow:
@@ -68,27 +70,29 @@
 /* ─── Paragraph text blocks ─── */
 .textBlock {
   font-size: clamp(0.85rem, 1.05vw, 1rem);
-  line-height: 1.75;
+  line-height: 1.8;
   color: #dde4f5;
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
-  max-width: 320px; /* Constrain width similar to image width */
+  max-width: 420px; /* Stretch longer */
   width: 100%;
 }
 
 .leftColumn .textBlock {
-  text-align: right;
-  margin-left: auto; /* push towards the center */
+  text-align: left; /* Left align like Image 2 */
+  margin-left: 0; 
+  padding-left: 0.5rem; /* Align slightly under the B */
   animation-delay: 0.2s;
 }
 
 .rightColumn .textBlock {
   text-align: left;
-  margin-right: auto; /* restrict to left side of column */
+  margin-right: auto;
+  padding-left: 0.5rem;
   animation-delay: 0.35s;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .rightColumn .textBlock p {

@@ -11,11 +11,9 @@ export function Hero() {
           <h1 className={styles.word}>BUSINESS</h1>
           <div className={styles.textBlock}>
             <p>
-              Defining my professional identity through three words:{' '}
-              <strong>Analytical</strong>, <strong>Systematic</strong>, and{' '}
-              <strong>Versatile</strong>. My mission is to engineer efficiency
-              by refining business processes and architecting data systems that
-              drive measurable impact.
+              Analytical. Systematic. Versatile. Engineering<br/>
+              efficiency through optimized processes and data<br/>
+              architecture
             </p>
           </div>
         </div>
@@ -34,20 +32,13 @@ export function Hero() {
           <h1 className={styles.word}>ANALYST</h1>
           <div className={styles.textBlock}>
             <p>
-              I&apos;m Thu (Janis){' '}
-              <span className={styles.accent}>| Technical Business Analyst</span>
+              I&apos;m Thư (Janis) | Technical Business Analyst
             </p>
             <p>
-              UEH University{' '}
-              <span className={styles.accent}>| Technology and Innovation</span>
+              UEH University | Technology and Innovation
             </p>
             <p>
-              Status:{' '}
-              <span className={styles.accent}>Open for Internships (May 2026)</span>
-            </p>
-            <p>
-              Location:{' '}
-              <span className={styles.accent}>Ho Chi Minh City, VN</span>
+              Location: Ho Chi Minh City, VN
             </p>
           </div>
         </div>
