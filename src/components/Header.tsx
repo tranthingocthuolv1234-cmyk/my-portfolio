@@ -10,6 +10,9 @@ import styles from "./Header.module.scss";
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  if (pathname === "/") {
+    return null;
+  }
 
   return (
     <>

@@ -43,16 +43,15 @@
   position: relative;
   z-index: 1;
   min-height: 100vh;
-  padding: 1.2rem 2rem 2rem;
-  display: grid;
-  place-items: start center;
+  padding: 1.2rem 1.6rem 2rem;
+  display: block;
 }
 
 .heroPanel {
-  width: min(980px, calc(100vw - 64px));
+  width: 100%;
   border: 0;
   background: linear-gradient(180deg, rgba(13, 22, 43, 0.9), rgba(13, 22, 43, 0.92));
-  padding: 0.9rem 2rem 1.5rem;
+  padding: 0.9rem 2.2rem 1.5rem;
 }
 
 .title {
@@ -162,8 +161,8 @@
 .textRow {
   margin-top: 0.15rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.4rem;
 }
 
 .intro,
@@ -193,7 +192,7 @@
 
 @media (max-width: 920px) {
   .heroPanel {
-    width: min(980px, calc(100vw - 30px));
+    width: 100%;
     padding: 0.85rem 1rem 1.2rem;
   }
 
