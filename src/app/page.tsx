@@ -1,15 +1,7 @@
 ﻿"use client";
 
 import React from "react";
-import Link from "next/link";
 import styles from "./home.module.scss";
-
-const navItems = [
-  { href: "#", icon: "/images/home.png", label: "Home" },
-  { href: "#", icon: "/images/account.png", label: "About me" },
-  { href: "#", icon: "/images/project.png", label: "Project" },
-  { href: "#", icon: "/images/gallary.png", label: "Gallary" },
-];
 
 export default function Home() {
   return (
@@ -18,19 +10,6 @@ export default function Home() {
 
       <section className={styles.hero}>
         <div className={styles.heroPanel}>
-          <h1 className={styles.title}>JANIS LAND</h1>
-
-          <nav className={styles.panelNav} aria-label="Primary">
-            {navItems.map((item) => (
-              <Link key={item.label} href={item.href} className={styles.panelNavItem}>
-                <span className={styles.panelIconCircle}>
-                  <img src={item.icon} alt="" aria-hidden="true" />
-                </span>
-                <span>{item.label}</span>
-              </Link>
-            ))}
-          </nav>
-
           <div className={styles.wordLayer}>
             <p className={styles.wordLeft}>BUSINESS</p>
             <figure className={styles.photoWrap}>
