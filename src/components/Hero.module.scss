@@ -11,11 +11,11 @@
 .wordLayer {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  align-items: flex-end;          /* words sit at the bottom, image hangs down */
-  column-gap: clamp(0.5rem, 1.5vw, 1.2rem);
+  align-items: flex-end;
+  column-gap: clamp(0.4rem, 1vw, 0.8rem);
   width: 100%;
-  padding: 0 2rem;
-  min-height: clamp(220px, 28vw, 340px);
+  padding: 0 1.5rem;
+  min-height: clamp(190px, 24vw, 290px);
 }
 
 /* Big BUSINESS / ANALYST */
@@ -25,7 +25,7 @@
   font-family: "Times New Roman", serif;
   font-style: italic;
   font-weight: 700;
-  font-size: clamp(4rem, 9vw, 8.5rem);
+  font-size: clamp(3.2rem, 6.2vw, 5.2rem);
   line-height: 0.88;
   letter-spacing: 0.01em;
   white-space: nowrap;
@@ -56,9 +56,9 @@
 /* Profile photo – sits in the center column, slightly overflowing */
 .photoWrap {
   margin: 0;
-  width: clamp(160px, 20vw, 240px);
+  width: clamp(150px, 18vw, 215px);
   z-index: 2;
-  transform: translateY(20px);   /* overlap below into the text-row */
+  transform: translateY(22px);
   animation: fadeInUp 0.9s ease both;
 }
 
