@@ -21,8 +21,11 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  text-align: right;           /* push BUSINESS flush against image */
-  padding: 1.8rem 0.4rem 1.8rem 0;
+  text-align: right;
+  padding: 0 0 1.8rem 0;
+  margin-top: -1rem; /* đẩy lên thêm một chút */
+  margin-right: -4rem; /* Overlap image */
+  z-index: 2;          /* Ensure text is above image */
 }
 
 /* ─── RIGHT column ─── */
@@ -30,33 +33,36 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  text-align: left;            /* ANALYST flush against image on left */
-  padding: 1.8rem 0 1.8rem 0.4rem;
+  text-align: left;
+  padding: 0 0 1.8rem 0;
+  margin-top: -1rem; /* đẩy lên thêm một chút */
+  margin-left: -4rem; /* Overlap image */
+  z-index: 2;         /* Ensure text is above image */
 }
 
 /* ─── Big BUSINESS / ANALYST words ─── */
 .word {
-  margin: 0 0 1.4rem 0;
+  margin: 0 0 4rem 0;  /* increased margin bottom so text blocks are lower */
   font-family: "Times New Roman", serif;
   font-style: italic;
   font-weight: 700;
-  font-size: clamp(3.5rem, 5.8vw, 5.5rem);
+  font-size: clamp(4.5rem, 10vw, 8rem);  /* Enlarge text */
   line-height: 1;
   letter-spacing: 0.02em;
   white-space: nowrap;
   color: #fff;
   text-shadow:
-    0 0 8px rgba(255, 255, 255, 0.95),
-    0 0 20px rgba(255, 255, 255, 0.7),
-    0 0 40px rgba(255, 255, 255, 0.4);
+    0 0 10px rgba(255, 255, 255, 0.95),
+    0 0 30px rgba(255, 255, 255, 0.7),
+    0 0 50px rgba(255, 255, 255, 0.4);
   transition: text-shadow 0.3s ease;
 }
 
 .word:hover {
   text-shadow:
-    0 0 12px rgba(255, 255, 255, 1),
-    0 0 30px rgba(255, 255, 255, 0.9),
-    0 0 60px rgba(255, 255, 255, 0.6);
+    0 0 15px rgba(255, 255, 255, 1),
+    0 0 40px rgba(255, 255, 255, 0.9),
+    0 0 70px rgba(255, 255, 255, 0.6);
 }
 
 /* ─── Paragraph text blocks ─── */
@@ -66,15 +72,19 @@
   color: #dde4f5;
   opacity: 0;
   animation: fadeIn 1s ease-out forwards;
+  max-width: 320px; /* Constrain width similar to image width */
+  width: 100%;
 }
 
 .leftColumn .textBlock {
   text-align: right;
+  margin-left: auto; /* push towards the center */
   animation-delay: 0.2s;
 }
 
 .rightColumn .textBlock {
   text-align: left;
+  margin-right: auto; /* restrict to left side of column */
   animation-delay: 0.35s;
   display: flex;
   flex-direction: column;
@@ -97,6 +107,7 @@
   align-items: flex-end;
   justify-content: center;
   position: relative;
+  z-index: 1; /* Below text */
 }
 
 .profileImage {
