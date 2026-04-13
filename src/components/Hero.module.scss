@@ -21,7 +21,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 1.8rem 2.5rem 1.8rem 0;
+  text-align: right;           /* push BUSINESS flush against image */
+  padding: 1.8rem 0.4rem 1.8rem 0;
 }
 
 /* ─── RIGHT column ─── */
@@ -29,7 +30,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 1.8rem 0 1.8rem 2.5rem;
+  text-align: left;            /* ANALYST flush against image on left */
+  padding: 1.8rem 0 1.8rem 0.4rem;
 }
 
 /* ─── Big BUSINESS / ANALYST words ─── */
@@ -67,7 +69,7 @@
 }
 
 .leftColumn .textBlock {
-  text-align: left;
+  text-align: right;
   animation-delay: 0.2s;
 }
 
