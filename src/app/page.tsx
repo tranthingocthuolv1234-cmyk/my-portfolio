@@ -5,10 +5,10 @@ import Link from "next/link";
 import styles from "./home.module.scss";
 
 const navItems = [
-  { href: "#", icon: "/images/home.png", label: "gateway" },
-  { href: "#", icon: "/images/account.png", label: "janis.md" },
-  { href: "#", icon: "/images/project.png", label: "Logic Lab" },
-  { href: "#", icon: "/images/gallary.png", label: "Satellite View" },
+  { href: "#", icon: "/images/home.png", label: "Home" },
+  { href: "#", icon: "/images/account.png", label: "About me" },
+  { href: "#", icon: "/images/project.png", label: "Project" },
+  { href: "#", icon: "/images/gallary.png", label: "Gallary" },
 ];
 
 export default function Home() {
@@ -16,40 +16,46 @@ export default function Home() {
     <main className={styles.page}>
       <div className={styles.glassOverlay} />
 
-      <header className={styles.navWrap}>
-        <nav className={styles.navPill} aria-label="Primary">
-          {navItems.map((item) => (
-            <Link key={item.label} href={item.href} className={styles.navItem}>
-              <img src={item.icon} alt="" aria-hidden="true" />
-              <span>{item.label}</span>
-            </Link>
-          ))}
-        </nav>
-      </header>
-
       <section className={styles.hero}>
-        <p className={styles.bgText}>BUSINESS ANALYST</p>
+        <div className={styles.heroPanel}>
+          <h1 className={styles.title}>JANIS LAND</h1>
 
-        <div className={styles.contentLayer}>
-          <article className={styles.intro}>
-            <p>
-              Defining my professional identity through three words: <strong>Analytical</strong>,
-              <strong> Systematic</strong>, and <strong>Versatile</strong>. My mission is to engineer
-              efficiency by refining business processes and architecting data systems that drive
-              measurable impact.
-            </p>
-          </article>
+          <nav className={styles.panelNav} aria-label="Primary">
+            {navItems.map((item) => (
+              <Link key={item.label} href={item.href} className={styles.panelNavItem}>
+                <span className={styles.panelIconCircle}>
+                  <img src={item.icon} alt="" aria-hidden="true" />
+                </span>
+                <span>{item.label}</span>
+              </Link>
+            ))}
+          </nav>
 
-          <figure className={styles.photoWrap}>
-            <img src="/images/image_4.jpg" alt="Thu Janis portrait" className={styles.profileImg} />
-          </figure>
+          <div className={styles.wordLayer}>
+            <p className={styles.wordLeft}>BUSINESS</p>
+            <figure className={styles.photoWrap}>
+              <img src="/images/avt.png" alt="Thu Janis portrait" className={styles.profileImg} />
+            </figure>
+            <p className={styles.wordRight}>ANALYST</p>
+          </div>
 
-          <aside className={styles.status}>
-            <p>I&apos;m Thu (Janis) | Technical Business Analyst</p>
-            <p>UEH University | Technology and Innovation</p>
-            <p>Status: Open for Internships (May 2026)</p>
-            <p>Location: Ho Chi Minh City, VN</p>
-          </aside>
+          <div className={styles.textRow}>
+            <article className={styles.intro}>
+              <p>
+                Defining my professional identity through three words: <strong>Analytical</strong>,
+                <strong> Systematic</strong>, and <strong>Versatile</strong>. My mission is to
+                engineer efficiency by refining business processes and architecting data systems
+                that drive measurable impact.
+              </p>
+            </article>
+
+            <aside className={styles.status}>
+              <p>I&apos;m Thu (Janis) | Technical Business Analyst</p>
+              <p>UEH University | Technology and Innovation</p>
+              <p>Status: Open for Internships (May 2026)</p>
+              <p>Location: Ho Chi Minh City, VN</p>
+            </aside>
+          </div>
         </div>
       </section>
     </main>
