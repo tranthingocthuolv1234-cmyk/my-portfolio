@@ -38,12 +38,11 @@ export default function Home() {
         </header>
 
         <section className={styles.heroSection} id="about">
-          <div className={styles.overlapTitle}>
-            <div className={styles.heroWordLeft}>BUSINESS</div>
+          <div className={styles.heroVisual}>
+            <div className={styles.heroOutline}>BUSINESS ANALYST</div>
             <div className={styles.avatarWrapper}>
-              <img src="/images/avt.png" alt="Janis Thu Avatar" className={styles.avatar} />
+              <img src="/images/image_4.jpg" alt="Janis Thu Avatar" className={styles.avatar} />
             </div>
-            <div className={styles.heroWordRight}>ANALYST</div>
           </div>
 
           <div className={styles.heroContent}>
